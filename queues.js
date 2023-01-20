@@ -10,7 +10,7 @@
 
 class Node {
   constructor(value) {
-    this.value = null;
+    this.value = value;
     this.next = null;
   }
 }
@@ -18,7 +18,7 @@ class Queue {
   constructor() {
     this.first = null;
     this.last = null;
-    this.size = null;
+    this.size = 0;
   }
   enqueue(val) {
     let newNode = new Node(val);
@@ -26,7 +26,7 @@ class Queue {
       this.first = newNode;
       this.last = newNode;
     } else {
-      this.last = this.last.next;
+      this.last.next = newNode;
       this.last = newNode;
     }
     this.size++;
@@ -46,4 +46,31 @@ class Queue {
 
     return temp.value;
   }
+
+  peek() {
+    if (!this.first) return null;
+    return this.first.value;
+  }
+
+  isEmpty() {
+    if (!this.first) return true;
+    return false;
+  }
+
+  printQueue() {
+    return this;
+  }
 }
+
+let newQueue = new Queue();
+newQueue.enqueue(3);
+newQueue.enqueue(5);
+
+console.log(newQueue.printQueue());
+
+// Challenge 3: Create 3 additional methods that are:
+// • peek (retrieves the element at the start of the queue, WITHOUT removing it)
+
+// • isEmpty (checks if the queue is empty – should return true or false)
+// o hint - what property of the queue can you use to build this methodJ?
+// • printQueue (prints the elements in the queue)
