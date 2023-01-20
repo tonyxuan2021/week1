@@ -47,30 +47,32 @@ class Queue {
     return temp.value;
   }
 
+  // Challenge 3: Create 3 additional methods that are:
+  // • peek (retrieves the element at the start of the queue, WITHOUT removing it)
+
   peek() {
     if (!this.first) return null;
     return this.first.value;
   }
+
+  // • isEmpty (checks if the queue is empty – should return true or false)
+  // o hint - what property of the queue can you use to build this methodJ?
 
   isEmpty() {
     if (!this.first) return true;
     return false;
   }
 
+  // • printQueue (prints the elements in the queue)
+
   printQueue() {
     return this;
   }
 }
 
-let newQueue = new Queue();
-newQueue.enqueue(3);
-newQueue.enqueue(5);
+// Testing
+// let newQueue = new Queue();
+// newQueue.enqueue(3);
+// newQueue.enqueue(5);
 
-console.log(newQueue.printQueue());
-
-// Challenge 3: Create 3 additional methods that are:
-// • peek (retrieves the element at the start of the queue, WITHOUT removing it)
-
-// • isEmpty (checks if the queue is empty – should return true or false)
-// o hint - what property of the queue can you use to build this methodJ?
-// • printQueue (prints the elements in the queue)
+// console.log(newQueue.printQueue());
